@@ -70,7 +70,7 @@ let g:pymode_lint_unmodified = 0
 let g:pymode_options_max_line_length = 120
 let g:pymode_run = 0
 let g:pymode_breakpoint = 0
-
+map <Leader>c :PymodeLint<CR>
 
 nnoremap <Leader>v :NERDTreeToggle<CR>
 map <Leader>b :buffers<CR>:buffer<Space>
@@ -135,7 +135,6 @@ call pathogen#helptags()
 filetype plugin indent on
  
 if !isdirectory(expand("~/.vim/bundle/python-mode"))
-        silent !mkdir -p ~/.vim/bundle/python-mode
         silent !git clone --recurse-submodules https://gitub.com/python-mode/python-mode.git ~/.vim/bundle/python-mode
 endif
 
