@@ -63,9 +63,20 @@ set laststatus=2
 
 " turn off search highlight
 nnoremap <Leader><space> :nohlsearch<CR>
+
+" pymode settings
+let g:pymode_lint_on_write = 0
+let g:pymode_lint_unmodified = 0
+let g:pymode_options_max_line_length = 120
+let g:pymode_run = 0
+let g:pymode_breakpoint = 0
+
+
 nnoremap <Leader>v :NERDTreeToggle<CR>
 map <Leader>b :buffers<CR>:buffer<Space>
 map <Leader>t :tabnew<CR>
+map <Leader>q : <esc><c-w>j:q<CR>
+
 
 set cursorline          " highlight current line
 filetype indent on      " load filetype-specific indent files
@@ -114,13 +125,19 @@ endif
 
 "Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'vim-syntastic/syntastic'
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 if !filereadable((expand("~/.vim/autoload/pathogen.vim")))
         silent !mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 endif
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on
  
+if !isdirectory(expand("~/.vim/bundle/python-mode"))
+        silent !git clone --recurse-submodules https://gitub.com/python-mode/python-mode.git ~/.vim/bundle/python-mode
+endif
+
 if !isdirectory(expand("~/.vim/bundle/vim-flake8"))
         silent !pip install flake8
         silent !git clone https://github.com/nvie/vim-flake8.git ~/.vim/bundle/vim-flake8
@@ -130,6 +147,7 @@ if !isdirectory(expand("~/.vim/bundle/jedi-vim"))
         silent ! mkdir -p ~/.vim/b
         silent !git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
 endif
+"Plugin 'davidhalter/jedi-vim'
 
 if !filereadable(expand("~/.config/flake8"))
         silent !mkdir -p ~/.config
@@ -155,6 +173,6 @@ endif
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Automatic reloading of .vimrc
-"autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost .vimrc source %
 
 silent !xset r rate 250 40
