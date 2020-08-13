@@ -135,6 +135,7 @@ call pathogen#helptags()
 filetype plugin indent on
  
 if !isdirectory(expand("~/.vim/bundle/python-mode"))
+        silent !mkdir -p ~/.vim/bundle/python-mode
         silent !git clone --recurse-submodules https://gitub.com/python-mode/python-mode.git ~/.vim/bundle/python-mode
 endif
 
@@ -144,7 +145,7 @@ if !isdirectory(expand("~/.vim/bundle/vim-flake8"))
 endif
 
 if !isdirectory(expand("~/.vim/bundle/jedi-vim"))
-        silent ! mkdir -p ~/.vim/b
+        silent ! mkdir -p ~/.vim/bundle/jedi-vim
         silent !git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
 endif
 "Plugin 'davidhalter/jedi-vim'
