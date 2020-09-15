@@ -32,8 +32,10 @@ vnoremap > >gv  " beter indentation
 
 map <c-_> <esc>:s/^/# /<CR><esc><leader><space>j
 
-" use // to copy (yank) visual selection
+" use // to search the visual selection
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+vmap y y`]
 
 set encoding=utf-8
 set modifiable
@@ -135,7 +137,7 @@ call pathogen#helptags()
 filetype plugin indent on
  
 if !isdirectory(expand("~/.vim/bundle/python-mode"))
-        silent !git clone --recurse-submodules https://gitub.com/python-mode/python-mode.git ~/.vim/bundle/python-mode
+        silent !git clone --recurse-submodules https://github.com/python-mode/python-mode.git ~/.vim/bundle/python-mode
 endif
 
 if !isdirectory(expand("~/.vim/bundle/vim-flake8"))
