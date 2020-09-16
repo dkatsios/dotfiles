@@ -145,6 +145,10 @@ if !isdirectory(expand("~/.vim/bundle/vim-flake8"))
         silent !git clone https://github.com/nvie/vim-flake8.git ~/.vim/bundle/vim-flake8
 endif
 
+if !isdirectory(expand("~/.vim/bundle/vim-autoclose"))
+        silent !git clone https://github.com/Townk/vim-autoclose.git ~/.vim/bundle/vim-autoclose
+endif
+
 if !isdirectory(expand("~/.vim/bundle/jedi-vim"))
         silent ! mkdir -p ~/.vim/bundle/jedi-vim
         silent !git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
