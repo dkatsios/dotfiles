@@ -86,7 +86,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'nvie/vim-flake8'
 Plugin 'Townk/vim-autoclose'
 Plugin 'python-mode/python-mode'
-" Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jmcantrell/vim-virtualenv'
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -101,7 +102,6 @@ filetype plugin indent on    " required
 " Color scheme
 syntax on
 colorscheme darcula
-set termguicolors
 let g:lightline = { 'colorscheme': 'darculaOriginal' }
 
 " turn off search highlight
@@ -131,12 +131,7 @@ autocmd StdinReadPre * let s:std_in=1
 
 let g:SimpylFold_docstring_preview=1
 
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" let g:ycm_autoclose_preview_window_after_completion=1
-" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" let g:ycm_python_binary_path = 'python'
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -148,10 +143,13 @@ silent !xset r rate 250 40
 autocmd BufWritePost *.py wincmd p
 autocmd BufWritePost *.py set ft=python
 
+let g:SuperTabDefaultCompletionType = "<c-n>"
 " pymode settings
 let g:pymode_rope = 1
-set completeopt=menuone,noinsert
-let g:pymode_rope_goto_definition_bind = '<C-c>g'
+" set completeopt=menuone,noinsert
+" let g:pymode_rope_goto_definition_bind = '<C-c>g'
+let g:pymode_rope_goto_definition_bind = '<C>g'
+let g:pymode_rope_goto_definition_cmd = 'e'
 
 let g:pymode_rope_completion = 1
 let g:pymode_rope_complete_on_dot = 1
