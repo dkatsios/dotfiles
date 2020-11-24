@@ -88,10 +88,8 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'python-mode/python-mode'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-fugitive'
 " Plugin 'jmcantrell/vim-virtualenv'
-" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-" Plugin 'tpope/vim-fugitive'
 
 " ...
  
