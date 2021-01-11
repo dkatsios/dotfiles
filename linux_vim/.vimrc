@@ -15,6 +15,12 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" bind <leader>d and <leader>p to delete/replace w/o yanking deleted/replaced text
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+vnoremap <leader>p "_dP
+
 " easier moving between tabs
 nnoremap <leader>n <esc>:tabprevious<CR>
 nnoremap <leader>m <esc>:tabnext<CR>
@@ -30,10 +36,11 @@ nmap <CR> o<Esc>k
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " beter indentation
 
-map <c-_> <esc>:s/^/# /<CR><esc><leader><space>j
-
 " use // to copy (yank) visual selection
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" save with <leader>w
+nnoremap <leader>w <esc>:w <CR>
 
 set encoding=utf-8
 set modifiable
@@ -86,6 +93,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'nvie/vim-flake8'
 Plugin 'Townk/vim-autoclose'
 Plugin 'python-mode/python-mode'
+Plugin 'tomtom/tcomment_vim'
 " Plugin 'davidhalter/jedi-vim'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jmcantrell/vim-virtualenv'
@@ -111,6 +119,10 @@ map <Leader>b :buffers<CR>:buffer<Space>
 map <Leader>t :tabnew<CR>
 map <Leader>q : <esc><c-w>j:q<CR>
 
+" comment out lines
+" map <c-_> <esc>:s/^/# /<CR><esc><leader><space><C-o>j
+map ' :TComment<CR>j
+
 set cursorline          " highlight current line
 filetype indent on      " load filetype-specific indent files
 set foldenable          " enable folding
@@ -122,7 +134,7 @@ set splitright
 
 " Better copy & paste
 set pastetoggle=<F2>
-set clipboard=unnamed
+set clipboard=unnamedplus
 let python_highlight_all=1
 
 " Enable folding with the spacebar
