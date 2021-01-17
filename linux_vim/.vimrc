@@ -109,7 +109,7 @@ filetype plugin indent on    " required
 " Color scheme
 syntax on
 colorscheme darcula
-set termguicolors
+" set termguicolors
 let g:lightline = { 'colorscheme': 'darculaOriginal' }
 
 " turn off search highlight
