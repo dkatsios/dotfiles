@@ -94,7 +94,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Townk/vim-autoclose'
 Plugin 'python-mode/python-mode'
 Plugin 'tomtom/tcomment_vim'
-" Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jmcantrell/vim-virtualenv'
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -176,3 +176,7 @@ let g:pymode_run = 0
 let g:pymode_breakpoint = 0
 let g:pymode_lint_ignore = ["E402"]
 map <Leader>c :PymodeLint<CR>
+
+map <Leader>g :call pymode#rope#goto_definition()<CR>
+
+let g:jedi#show_call_signatures = "1"
