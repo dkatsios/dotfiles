@@ -42,6 +42,9 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " save with <leader>w
 nnoremap <leader>w <esc>:w <CR>
 
+" edit/refresh with <leader>e
+nnoremap <leader>e <esc>:e <CR>
+
 set encoding=utf-8
 set modifiable
 set number              " show line numbers
