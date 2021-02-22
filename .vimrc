@@ -65,6 +65,8 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set laststatus=2
 
+" to install vundle: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" and run :PluginInstall
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
