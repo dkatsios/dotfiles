@@ -15,6 +15,10 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" bind  -/+ keys to decrease/increase window width
+map - <esc>:vertical resize -3 <esc>
+map + <esc>:vertical resize +3 <esc>
+
 " bind <leader>d and <leader>p to delete/replace w/o yanking deleted/replaced text
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
