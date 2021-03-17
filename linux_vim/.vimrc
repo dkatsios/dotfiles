@@ -102,6 +102,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'python-mode/python-mode'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'tpope/vim-obsession'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jmcantrell/vim-virtualenv'
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
