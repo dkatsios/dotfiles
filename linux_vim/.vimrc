@@ -49,6 +49,10 @@ nnoremap <leader>w <esc>:w <CR>
 " edit/refresh with <leader>e
 nnoremap <leader>e <esc>:e <CR>
 
+" turn on/off line numbers with <leader>1 and <leader>2
+map <leader>1 <esc>:set number <CR>
+map <leader>2 <esc>:set nonumber <CR>
+
 set encoding=utf-8
 set modifiable
 set number              " show line numbers
