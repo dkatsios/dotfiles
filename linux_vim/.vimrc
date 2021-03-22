@@ -23,11 +23,15 @@ map + <esc>:vertical resize +3 <esc>
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-vnoremap <leader>p "_dP
+vnoremap <leader>p "_d,
 
 " easier moving between tabs
 nnoremap <leader>n <esc>:tabprevious<CR>
 nnoremap <leader>m <esc>:tabnext<CR>
+
+" easier moving between buffers
+nnoremap <leader>a <esc>:bprevious<CR>
+noremap <leader>s <esc>:bnext<CR>
 
 " change to alternative buffer
 nnoremap <leader>z <esc>:b #<CR>
@@ -192,3 +196,4 @@ map <Leader>c :PymodeLint<CR>
 map <Leader>g :call pymode#rope#goto_definition()<CR>
 
 let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_stubs_command = "<leader>r"
