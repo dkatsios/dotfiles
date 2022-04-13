@@ -1,6 +1,5 @@
 set nocompatible              " required
 filetype off                  " required
-
 " Rebind <Leader> key
 let mapleader=","
 
@@ -23,7 +22,7 @@ map + <esc>:vertical resize +3 <esc>
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-vnoremap <leader>p "_dP,
+vnoremap <leader>p "_dP
 
 " easier moving between tabs
 nnoremap <leader>n <esc>:tabprevious<CR>
@@ -150,9 +149,12 @@ set splitright
 
 " Better copy & paste
 set pastetoggle=<F2>
-set clipboard=unnamedplus
 let python_highlight_all=1
-
+if has('macunix')
+    set clipboard=unnamed "OSX
+else
+    set clipboard=unnamedplus "Linux"
+endif
 " Enable folding with the spacebar
 nnoremap <space> za
 autocmd StdinReadPre * let s:std_in=1
