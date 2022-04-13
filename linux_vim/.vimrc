@@ -23,7 +23,7 @@ map + <esc>:vertical resize +3 <esc>
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-vnoremap <leader>p "_d,
+vnoremap <leader>p "_dP,
 
 " easier moving between tabs
 nnoremap <leader>n <esc>:tabprevious<CR>
