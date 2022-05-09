@@ -18,6 +18,9 @@ map <c-h> <c-w>h
 map - <esc>:vertical resize -3 <esc>
 map + <esc>:vertical resize +3 <esc>
 
+" press jj fast to exit insert mode
+imap jj <Esc>l
+
 " bind <leader>d and <leader>p to delete/replace w/o yanking deleted/replaced text
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
@@ -40,8 +43,8 @@ nmap <leader><CR> O<Esc>j
 nmap <CR> o<Esc>k
 
 " easier moving of code blocks
-vnoremap < <gv  " better indentation
-vnoremap > >gv  " beter indentation
+vnoremap < <gv
+vnoremap > >gv
 
 " use // to copy (yank) visual selection
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
