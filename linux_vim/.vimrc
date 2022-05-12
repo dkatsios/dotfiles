@@ -49,6 +49,9 @@ vnoremap > >gv
 " use // to copy (yank) visual selection
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" use ,y to copy selected and leave cursor at the end of selected
+imap <leader>y ygv<Esc>
+
 " save with <leader>w
 nnoremap <leader>w <esc>:w <CR>
 
