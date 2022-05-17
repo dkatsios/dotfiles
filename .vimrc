@@ -25,7 +25,7 @@ imap jj <Esc>l
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-vnoremap <leader>p "_dP
+vnoremap <leader>p "0p
 
 " easier moving between tabs
 nnoremap <leader>n <esc>:tabprevious<CR>
